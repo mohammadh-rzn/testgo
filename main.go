@@ -30,9 +30,12 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Hello! you've requested %s\n", r.URL.Path)
 	})
+	http.HandleFunc("/salam", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Hello! you've requested %s\n", r.URL.Path)
+	})
 
 	port := os.Getenv("PORT")
-	if port == "" {
+	if port == ""{
 		port = "666"
 	}
 
